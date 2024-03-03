@@ -1,11 +1,13 @@
+import EmployeeList from "./components/EmployeeList";
+import EmployeeContextProvider from "./context/EmployeeContext";
 
 
 function App() {
   return (
     <>
-    <h1>
-      Hello
-    </h1>
+    <EmployeeContextProvider>
+    <EmployeeList />
+    </EmployeeContextProvider>
     </>
   );
 }
