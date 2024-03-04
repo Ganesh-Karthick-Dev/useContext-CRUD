@@ -1,6 +1,10 @@
 import React from "react";
+import { EmployeeContext } from "../context/EmployeeContext";
+import { useContext } from "react";
 
 const Employee = ({ employee }) => {
+
+  const {deleteEmployee} = useContext(EmployeeContext)
 
 
   return (
@@ -45,7 +49,7 @@ const Employee = ({ employee }) => {
                       </svg>
                     </button>
 
-                    <button>
+                    <button onClick={()=>deleteEmployee(employee.id)}>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
