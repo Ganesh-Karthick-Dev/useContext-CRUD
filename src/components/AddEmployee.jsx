@@ -1,9 +1,37 @@
-import React from "react";
+import React, { useState } from "react";
+import { EmployeeContext } from "../context/EmployeeContext";
+import { useContext } from "react";
 
 const AddEmployee = () => {
+  
+  const {addEmployee} = useContext(EmployeeContext)
+
+  const [newEmployee,setNewEmployee] = useState({
+    name : "",
+    email : "",
+    address : "",
+    phone : ""
+  })
+
+  const onInputChange = (e)=> {
+    setNewEmployee({...newEmployee,[e.target.name]:e.target.value})
+  }
+
+  const {name,email,address,phone} = newEmployee ;
+
+  const handlesubmit = (e)=> {
+
+    e.preventDefault();
+
+    addEmployee(name,email,address,phone)
+
+  }
+
+
+
   return (
     <>
-      <form className="">
+      <form className="" >
         <div className="">
           <div className="mt-4 ">
             <div className="">
@@ -16,8 +44,10 @@ const AddEmployee = () => {
               <div className="mt-2">
                 <input
                   type="text"
-                  name="first-name"
                   id="name"
+                  name="name"
+                  value={name}
+                  onChange={(e)=>onInputChange(e)}
                   autoComplete="given-name"
                   className=" w-full rounded-md border border-slate-400 py-1 text-gray-900 shadow-sm"
                 />
@@ -33,7 +63,9 @@ const AddEmployee = () => {
               <div className="mt-2">
                 <input
                   type="text"
-                  name="first-name"
+                  name="email"
+                  value={email}
+                  onChange={(e)=>onInputChange(e)}
                   id="email"
                   autoComplete="given-name"
                   className=" w-full rounded-md border border-slate-400 py-1 text-gray-900 shadow-sm"
@@ -51,7 +83,9 @@ const AddEmployee = () => {
 
                 <textarea
                   autoComplete="given-name"
-                  name=""
+                  name="address"
+                  value={address}
+                  onChange={(e)=>onInputChange(e)}
                   id="address"
                   cols="30"
                   rows="4"
@@ -69,13 +103,16 @@ const AddEmployee = () => {
               <div className="mt-2">
                 <input
                   type="text"
-                  name="first-name"
+                  name="phone"
+                  value={phone}
+                  onChange={(e)=>onInputChange(e)}
                   id="phone"
                   autoComplete="given-name"
                   className=" w-full rounded-md border border-slate-400 py-1 text-gray-900 shadow-sm"
                 />
               </div>
             </div>
+            <button onClick={(e)=>handlesubmit(e)} className=" bg-green-500 text-white p-2 rounded-md mt-2">Add</button>
           </div>
         </div>
       </form>

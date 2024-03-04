@@ -1,11 +1,12 @@
-import React, { Fragment, useRef, useState, useContext } from "react";
+import React, { Fragment, useRef, useState, useContext, useEffect } from "react";
 import Employee from "./Employee";
-import { employeeContext } from "../context/EmployeeContext";
+import { EmployeeContext } from "../context/EmployeeContext";
 import { Dialog, Transition } from "@headlessui/react";
 import AddEmployee from "./AddEmployee";
 
 const EmployeeList = () => {
-  const employee = useContext(employeeContext);
+
+  const {employee} = useContext(EmployeeContext);
 
   const [open, setOpen] = useState(false);
 
@@ -14,6 +15,10 @@ const EmployeeList = () => {
   const handleEdit = () => {
     setOpen(true);
   };
+
+  useEffect(()=>{
+    setOpen(false)
+  },[employee])
 
   return (
     <>
@@ -115,7 +120,7 @@ const EmployeeList = () => {
                         className="inline-flex w-full justify-center rounded-md bg-red-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500 sm:ml-3 sm:w-auto"
                         onClick={() => setOpen(false)}
                       >
-                        close
+                        Close
                       </button>
                     </div>
                   </Dialog.Panel>

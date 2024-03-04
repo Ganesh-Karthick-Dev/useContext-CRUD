@@ -1,6 +1,8 @@
 import React from "react";
 
 const Employee = ({ employee }) => {
+
+
   return (
     <>
       <div className=" bg-white p-3  rounded-md mt-3">
