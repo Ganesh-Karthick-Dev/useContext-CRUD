@@ -27,7 +27,7 @@ const EmployeeContextProvider = (props)=> {
     }
 
     const editEmployee = (id,updatedemployee)=> {
-        setEmployee(employee.map((emp)=>emp.id === id ? updatedemployee : employee))
+        setEmployee(employee.map((emp)=>emp.id === id ? updatedemployee : emp))
     }
 
 
