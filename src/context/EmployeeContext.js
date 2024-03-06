@@ -6,14 +6,14 @@ export const EmployeeContext = createContext();
 
 const EmployeeContextProvider = (props)=> {
     const [employee,setEmployee] = useState([
-        {id:uuidv4(),name:"ganesh",email:"jaikarthick24697@gmail.com",address:"coimbatore",phone:9566767612},
-        {id:uuidv4(),name:"ganesh",email:"jaikarthick24697@gmail.com",address:"coimbatore",phone:9566767612},
-        {id:uuidv4(),name:"ganesh",email:"jaikarthick24697@gmail.com",address:"coimbatore",phone:9566767612},
-        {id:uuidv4(),name:"ganesh",email:"jaikarthick24697@gmail.com",address:"coimbatore",phone:9566767612},
-        {id:uuidv4(),name:"ganesh",email:"jaikarthick24697@gmail.com",address:"coimbatore",phone:9566767612},
-        {id:uuidv4(),name:"ganesh",email:"jaikarthick24697@gmail.com",address:"coimbatore",phone:9566767612},
-        {id:uuidv4(),name:"ganesh",email:"jaikarthick24697@gmail.com",address:"coimbatore",phone:9566767612},
-        {id:uuidv4(),name:"ganesh",email:"jaikarthick24697@gmail.com",address:"coimbatore",phone:9566767612},
+        {id:uuidv4(),name:"karthick",email:"jaikarthick24697@gmail.com",address:"coimbatore",phone:9566767612},
+        {id:uuidv4(),name:"ganesh",email:"jaikarthick24697@gmail.com",address:"coimbatore",phone:7373814805},
+        {id:uuidv4(),name:"manikandan",email:"jaikarthick24697@gmail.com",address:"coimbatore",phone:9566767612},
+        {id:uuidv4(),name:"dinesh",email:"jaikarthick24697@gmail.com",address:"coimbatore",phone:8610599336},
+        {id:uuidv4(),name:"amala",email:"jaikarthick24697@gmail.com",address:"coimbatore",phone:9566767612},
+        {id:uuidv4(),name:"seemathipathi",email:"jaikarthick24697@gmail.com",address:"coimbatore",phone:6382790668},
+        {id:uuidv4(),name:"raven",email:"jaikarthick24697@gmail.com",address:"coimbatore",phone:9566767612},
+        {id:uuidv4(),name:"vicky",email:"jaikarthick24697@gmail.com",address:"coimbatore",phone:9566767612},
         
     ])
 
